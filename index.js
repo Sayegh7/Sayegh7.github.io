@@ -1,7 +1,7 @@
 
 $(function() {
 //First create the controller
-var scrollMagicController = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: .80} });
+var scrollMagicController = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: .30} });
 
 //then the animation
 var portLinks = $('.portfolio-link')
@@ -23,6 +23,7 @@ var scene = new ScrollMagic.Scene({
 	duration: 400,
 	offset: 100
 }).setTween(tween)
+.setPin('#portfolio')
 .addTo(scrollMagicController)
 
 
@@ -32,14 +33,15 @@ var scene2 = new ScrollMagic.Scene({
 	duration: 400,
 	offset: 100
 }).setTween(aboutTween)
+.setPin('#about')
 .addTo(scrollMagicController)
-
 
 var scene3 = new ScrollMagic.Scene({
 	triggerElement: "#contact",
 	duration: 300,
-	offset: 300
+	offset: 100
 }).setTween(contactTween)
+.setPin('#contact')
 .addTo(scrollMagicController)
 
 });
