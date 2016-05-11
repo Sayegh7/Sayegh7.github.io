@@ -64,30 +64,77 @@ function get_filesize(url, callback) {
 //});
 }
 
-function calculateTotal(cb){
+function calculateTotal(){
+
 var el = document.getElementById('bar'); 
 var hl = document.getElementById('h1'); 
 var progress = document.getElementById('progress'); 
-var content = document.getElementById('content'); 
-var t  = (man.val + map.val + horizontal.val) / 3;
+var overlay = document.getElementById('overlay'); 
+var nav = document.getElementsByTagName('nav')[0]; 
+var t  = (profile.val + turkish.val + yugi.val + chat.val)/4;
 t = Math.round(t);
 //el.textContent = t + ' %';
 h1.innerHTML = t + '%';
 el.style.width = t + '%'	;
 
   if(t == 100){
- //	alert("Image loaded")
- 	progress.style.opacity = 0;
+  	TweenMax.to(progress, 1, {opacity: 0});
+  	TweenMax.to(overlay, 1, {opacity: 0});
+  	TweenMax.to(overlay, 1, {zIndex: -7});
+  	TweenMax.to(nav, 1, {opacity: 1});
+/* 	progress.style.opacity = 0;
  	h1.style.opacity = 0;
  	content.style.opacity = 1;
-  	return cb();
+*/  
   }
-  setTimeout(function(){
-  	calculateTotal(cb);}, 20);
-}
-	
-	
 
-
+var remove = function(){
+	$('#overlay').parent.removeChild($('#overlay')); 
 
 }
+  setTimeout(calculateTotal, 20);
+}
+
+	
+profile = {val: 0};
+turkish = {val: 0};
+yugi = {val: 0};
+chat = {val: 0};
+
+
+window.onload = function(){
+doRequest(profile, "https://sayegh7.github.io/img/profile.png", function(url){
+	var sprite = document.getElementById('profile');
+	sprite.setAttribute('src', url);
+
+});
+
+doRequest(turkish, "https://sayegh7.github.io/img/portfolio/01.jpg", function(url){
+	var sprite = document.getElementById('turkish1');
+	sprite.setAttribute('src', url);
+	var sprite = document.getElementById('turkish2');
+	sprite.setAttribute('src', url);
+});
+
+doRequest(yugi, "https://sayegh7.github.io/img/portfolio/yugi.jpg", function(url){
+	var sprite = document.getElementById('yugi1');
+	sprite.setAttribute('src', url);
+	var sprite = document.getElementById('yugi2');
+	sprite.setAttribute('src', url);
+
+});
+
+doRequest(chat, "https://sayegh7.github.io/img/portfolio/chat.png", function(url){
+	var sprite = document.getElementById('chat1');
+	sprite.setAttribute('src', url);
+	var sprite = document.getElementById('chat2');
+	sprite.setAttribute('src', url);
+
+});
+
+calculateTotal();
+}
+
+
+
+})
