@@ -78,7 +78,7 @@ h1.innerHTML = t + '%';
 el.style.width = t + '%'	;
 
   if(t == 100){
-  	TweenMax.to(progress, 1, {opacity: 0});
+  	TweenMax.to(progress, 1, {y: 0, ease:Elastic.easeInOut});
   	TweenMax.to(overlay, 1, {opacity: 0});
   	TweenMax.to(overlay, 1, {zIndex: -7});
   	TweenMax.to(nav, 1, {opacity: 1});
@@ -103,7 +103,7 @@ chat = {val: 0};
 
 
 window.onload = function(){
-doRequest(profile, "https://sayegh7.github.io/img/profile.png", function(url){
+doRequest(profile, "https://sayegh7.github.io/img/profile.jpg", function(url){
 	var sprite = document.getElementById('profile');
 	sprite.setAttribute('src', url);
 
