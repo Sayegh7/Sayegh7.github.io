@@ -1,5 +1,13 @@
 
 $(function() {
+
+    // Start ScrollMagic code
+function is_touch_device() {
+  return 'ontouchstart' in window // works on most browsers 
+      || 'onmsgesturechange' in window; // works on ie10
+};
+
+if (!is_touch_device()) {
 //First create the controller
 var scrollMagicController = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: .30} });
 
@@ -47,4 +55,5 @@ var scene3 = new ScrollMagic.Scene({
 .setPin('#contact')
 .addTo(scrollMagicController)
 
+}
 });
