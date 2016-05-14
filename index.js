@@ -12,6 +12,13 @@ if (!is_touch_device()) {
 var scrollMagicController = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: .30} });
 
 //then the animation
+var spin = true;
+var enableSpin = function(){
+	spin = true;
+}
+var disableSpin = function(){
+	spin = false;
+}
 var portLinks = $('.portfolio-link')
 var aboutDivs = $('#about .row')
 var contact = $('form div')
@@ -22,8 +29,11 @@ var tween = TweenMax.staggerFrom(portLinks, 1, {x:'-=100px', autoAlpha: 0, ease:
 var aboutTween = TweenMax.staggerFrom(aboutDivs, 1, {y:'-=100', autoAlpha: 0, ease: SlowMo.easeInOut}, 0.5);
 var contactTween = TweenMax.staggerFrom(contact, 1, {y:'-=100', autoAlpha: 0, ease: SlowMo.easeInOut}, 0.5);
 profilePic.click(function(){
-	TweenMax.to('#propic', 1, {rotation: '+=360'});
+	if(spin)
+	TweenMax.to('#propic', 1, {rotation: '+=360', onStart:disableSpin, onComplete:enableSpin});
 })
+
+
 TweenMax.from(name, 1, {autoAlpha: 0,x:'-=500px', ease: Quad.easeInOut});
 TweenMax.from(skills, 1, {autoAlpha: 0,x:'-=500px', ease: Quad.easeInOut});
 
