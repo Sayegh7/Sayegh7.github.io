@@ -21,10 +21,9 @@ var skills = $('#skill')
 var tween = TweenMax.staggerFrom(portLinks, 1, {x:'-=100px', autoAlpha: 0, ease: SlowMo.easeInOut}, 0.5);
 var aboutTween = TweenMax.staggerFrom(aboutDivs, 1, {y:'-=100', autoAlpha: 0, ease: SlowMo.easeInOut}, 0.5);
 var contactTween = TweenMax.staggerFrom(contact, 1, {y:'-=100', autoAlpha: 0, ease: SlowMo.easeInOut}, 0.5);
-
 profilePic.click(function(){
-	TweenMax.to(profilePic, 1, {rotation:'-=720', ease: Quad.easeInOut});
-});	
+	TweenMax.to('#propic', 1, {rotation: '+=360'});
+})
 TweenMax.from(name, 1, {autoAlpha: 0,x:'-=500px', ease: Quad.easeInOut});
 TweenMax.from(skills, 1, {autoAlpha: 0,x:'-=500px', ease: Quad.easeInOut});
 
