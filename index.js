@@ -30,7 +30,7 @@ var aboutTween = TweenMax.staggerFrom(aboutDivs, 1, {y:'-=100', autoAlpha: 0, ea
 var contactTween = TweenMax.staggerFrom(contact, 1, {y:'-=100', autoAlpha: 0, ease: SlowMo.easeInOut}, 0.5);
 profilePic.click(function(){
 	if(spin)
-	TweenMax.to('#propic', 1, {rotation: '+=360', onStart:disableSpin, onComplete:enableSpin});
+	TweenMax.to('#propic', 2, {rotation: '+=360', onStart:disableSpin, onComplete:enableSpin, ease:Elastic.easeInOut});
 })
 
 
