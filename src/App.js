@@ -19,7 +19,7 @@ const descriptions = {
   github: 'opens my github profile',
   linkedin: 'opens my linkedin profile',
   work: 'shows my work experience',
-  projetcs: 'shows my projects',
+  projects: 'shows my projects',
   opensource: 'shows my open source contributions',
 }
 export default class App extends Component {
@@ -29,6 +29,7 @@ export default class App extends Component {
         <Terminal
           color='green'
           startState='maximised'
+          allowTabs={false}
           backgroundColor='black'
           barColor='black'
           style={{ fontWeight: 'bold', fontSize: '1em' }}
