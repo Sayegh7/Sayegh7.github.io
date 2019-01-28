@@ -8,11 +8,19 @@ Phone: +201120006617
 LinkedIn: https://www.linkedin.com/in/sayegh7/
 `,
   github: () => { window.open('https://www.github.com/sayegh7', '_blank'); return 'done'},
+  linkedin: () => { window.open('https://www.linkedin.com/in/sayegh7/', '_blank'); return 'done'},
+  work: () => 'Work In Progress',
+  projects: () => 'Work In Progress',
+  opensource: () => 'Work In Progress',
 }
 
 const descriptions = {
-  contact: 'shows a message',
+  contact: 'show contact info',
   github: 'opens my github profile',
+  linkedin: 'opens my linkedin profile',
+  work: 'shows my work experience',
+  projetcs: 'shows my projects',
+  opensource: 'shows my open source contributions',
 }
 export default class App extends Component {
   render () {
