@@ -28,6 +28,7 @@ export default class App extends Component {
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
         <Terminal
           color='green'
+          startState='maximised'
           backgroundColor='black'
           barColor='black'
           style={{ fontWeight: 'bold', fontSize: '1em' }}
